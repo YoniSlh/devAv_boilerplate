@@ -1,20 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TaskController!{% endblock %}
+{% block title %}Liste des tâches{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-center mb-6">Liste des tâches</h1>
+    
+    <div class="flex justify-end mb-4">
+        <a href="{{ path('task_create') }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Ajouter une tâche</a>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/wamp64/www/BUT3A/DevAv/devAv_boilerplate/src/Controller/TaskController.php</code></li>
-        <li>Your template at <code>C:/wamp64/www/BUT3A/DevAv/devAv_boilerplate/templates/task/index.html.twig</code></li>
-    </ul>
+    <table class="table-auto w-full border-collapse border border-gray-300">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border border-gray-300 px-4 py-2 text-left">ID</th>
+                <th class="border border-gray-300 px-4 py-2 text-left">Nom</th>
+                <th class="border border-gray-300 px-4 py-2 text-left">Description</th>
+                <th class="border border-gray-300 px-4 py-2 text-left">Date de création</th>
+                <th class="border border-gray-300 px-4 py-2 text-left">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
 {% endblock %}

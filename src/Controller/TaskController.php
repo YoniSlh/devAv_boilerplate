@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Attribute\Route;  
 
 class TaskController extends AbstractController
 {
-    #[Route('/tasks/index', name: 'task_index')]
+    #[Route('/tasks', name: 'task_index')]
     public function index(): Response
     {
         return $this->render('task/index.html.twig', [
@@ -24,7 +24,7 @@ class TaskController extends AbstractController
         ]);
     }
 
-    #[Route('/tasks/{id}/edit', name: 'task_edit')]
+    #[Route('/tasks/edit/{id}', name: 'task_edit')]
     public function edit(int $id): Response
     {
         return $this->render('task/edit.html.twig', [
@@ -40,7 +40,7 @@ class TaskController extends AbstractController
         ]);
     }
 
-    #[Route('/tasks/{id}/delete', name: 'task_delete')]
+    #[Route('/tasks/delete/{id}', name: 'task_delete')]
     public function delete(int $id): Response
     {
         return new Response('Tâche supprimée : ' . $id);
